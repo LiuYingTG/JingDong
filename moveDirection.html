@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滑动方向函数封装</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<script>
+    window.onload=function () {
+        /*滑动方向函数封装为一个函数
+        * 1、左右滑动
+        * 2、当距离过小时（50px），不认为发生了滑动
+        * 3、touchDirection=function (dom,touchLeft,touchRight)
+        *   dom------绑定的元素
+        *   touchLeft：左滑动该触发的函数
+        *   touchRight：右滑动该触发的函数
+        * */
+        var startPointX=0;
+        var moveX=0;
+        var ismove=false;
+        var touchDirection=function (dom,touchLeft,touchRight) {
+            dom.addEventListener('touchstart',function (e) {
+                startPointX=e.touches[0].clientX;
+            });
+            dom.addEventListener('touchmove',function (e) {
+                var touchNowX=e.touches[0].clientX;
+                ismove=true;
+                moveX=touchNowX-startPointX;
+            });
+            dom.addEventListener('touchend',function (e) {
+                if(ismove&&Math.abs(moveX)>30){
+                    if(moveX<0){
+                        touchLeft&&touchLeft.call(this,e);
+                    }else{
+                        touchRight&&touchRight.call(this,e);
+                    }
+                }
+            });
+        }
+        var ele=document.getElementsByClassName('box')[0];
+        touchDirection(ele,function (e) {
+            console.log('左移动');
+            console.log(this);
+            console.log(e);
+        },function (e) {
+            console.log('右移动');
+            console.log(this);
+            console.log(e);
+        });
+    }
+</script>
+</body>
+</html>
