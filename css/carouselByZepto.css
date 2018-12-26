@@ -1,0 +1,65 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: content-box;
+}
+ul {
+  list-style: none;
+}
+body {
+  width: 100%;
+}
+.zepBanner {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.zepBanner ul:first-of-type {
+  width: 600%;
+  transform: translateX(-16.66666667%);
+}
+.zepBanner ul:first-of-type li {
+  float: left;
+  width: 16.66666667%;
+}
+.zepBanner ul:first-of-type li img {
+  display: block;
+  width: 100%;
+}
+.zepBanner ul:last-of-type {
+  width: 80px;
+  height: 20px;
+  position: relative;
+  left: 50%;
+  bottom: 50px;
+  margin-left: -40px;
+  background-color: #ff4328;
+}
+.zepBanner ul:last-of-type li {
+  float: left;
+  width: 20px;
+  text-align: center;
+}
+.zepBanner ul:last-of-type li a {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0px 5px;
+  border-radius: 50%;
+  background-color: aliceblue;
+}
+.zepBanner ul:last-of-type li a.active {
+  background-color: red;
+}
+.clearFloat {
+  clear: both;
+}
+.touchTest {
+  clear: both;
+  width: 200px;
+  height: 200px;
+  background-color: #ffd9e0;
+  text-align: center;
+  line-height: 200px;
+}
+/*# sourceMappingURL=carouselByZepto.css.map */

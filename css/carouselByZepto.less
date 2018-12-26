@@ -1,0 +1,65 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: content-box;
+}
+ul{
+  list-style: none;
+}
+body{
+  width: 100%;
+}
+.zepBanner{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  ul:first-of-type{
+    width: 600%;
+    transform: translateX(-100/6%);
+    li{
+      float: left;
+      width: 100/6%;
+      img{
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+  ul:last-of-type{
+    width: 80px;
+    height: 20px;
+    position: relative;
+    left: 50%;
+    bottom: 50px;
+    margin-left: -40px;
+
+    background-color: #ff4328;
+    li{
+      float: left;
+      width: 20px;
+      text-align: center;
+      a{
+        display: block;
+        width: 10px;
+        height: 10px;
+        margin: 0px 5px;
+        border-radius: 50%;
+        background-color: aliceblue;
+        &.active{
+          background-color: red;
+        }
+      }
+    }
+  }
+}
+.clearFloat{
+  clear: both;
+}
+.touchTest{
+  clear: both;
+  width: 200px;
+  height: 200px;
+  background-color: #ffd9e0;
+  text-align: center;
+  line-height: 200px;
+}
